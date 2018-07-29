@@ -1,0 +1,33 @@
+= Reconciling Requirements and Continuous Integration in an Agile Context
+Sebastien Mosser <https://github.com/mosser[@mosser]>; Jean-Michel Bruel <https://github.com/jmbruel[@jmbruel]>
+
+// Stuff for look & feel --------
+ifndef::env-github[:icons: font]
+ifdef::env-github,env-browser[]
+:toc: macro
+:toclevels: 1
+endif::[]
+ifdef::env-github[]
+:branch: master
+:status:
+:outfilesuffix: .adoc
+:!toc-title:
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+// Variables ---------------------
+:re2018url: http://www.re18.org/
+:re2018: {re2018url}[RE'2018]
+:docker: https://docs.docker.com/[Docker]
+
+== Context
+
+This tutorial is part of the {re2018} conference.
+
+== Requirements
+
+NOTE: Participants are required to have {docker} installed.
