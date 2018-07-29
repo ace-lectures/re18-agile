@@ -22,12 +22,24 @@ endif::[]
 // Variables ---------------------
 :re2018url: http://www.re18.org/
 :re2018: {re2018url}[RE'2018]
+:re2018tuto: http://www.re18.org/tutorials.html#T02
 :docker: https://docs.docker.com/[Docker]
+:gherkin: http://cukes.info/gherkin.html[Gherkin]
 
 == Context
 
-This tutorial is part of the {re2018} conference.
+This tutorial is part of the {re2018} conference (see {re2018tuto}).
+Do not hesitate to contact the authors to contribute or give feedback:
+Sebastien Mosser <https://github.com/mosser[@mosser]> & Jean-Michel Bruel <https://github.com/jmbruel[@jmbruel]>.
+
+== Content
+
+This tutorial aims at exploring the boundaries between requirements, specifications, stories, scenarios and tests. Revisiting requirements elicitation and bridging the gap between traditional requirements engineering and modern software development (highly based on continuous integration and tests), this tutorial will demonstrate how to operationalize a fully-fledged tool chain going from user stories to automated acceptance testing using open-source tools. This is applicable to industrial practitioners as we will rely on state of the art tools, and link agile requirements to formal requirement engineering methods. We will first focus on the notion of user stories and epics to express user’s requirements, and how to evaluate such requirements based on “definition of ready” and “definition of done” acceptance criteria. We will then demonstrate how such requirements can be tracked in a project management tool, and linked to source code development. At the source code level, we will demonstrate how the stories and the associated acceptance scenarios can be modeled using the {gherkin} language, and linked to classical unit tests to automate their validation. Finally, a continuous integration environment will be deployed using Docker to link together the different tools and offer an automated pipeline for software developers, bridging the gap between requirements and code development.
 
 == Requirements
 
 NOTE: Participants are required to have {docker} installed.
+
+== References and links
+
+- https://codingdojo.org/kata/PokerHands/
