@@ -38,7 +38,79 @@ This tutorial aims at exploring the boundaries between requirements, specificati
 
 == Requirements
 
-NOTE: Participants are required to have {docker} installed.
+NOTE: Participants are required to have {docker} installed, as well as Maven (version 3+) and a Java 8+ JDK. A virtual box image containing all the needed tools can be downloaded.
+
+== Tutorial
+
+=== Step #0: Setting up a java project
+
+. Create a new directory, e.g., `agile-tutorial`
+. inside this directory, create the following structure:
+  * Business code: `src/main/java`, `src/main/resources`
+  * Test code: `src/test/java`, `src/test/resources`
+. Create a maven _Project Object Model_  in a file named `pom.xml` with the following contents
+
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+			     http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.re.tutorials.agility</groupId>
+  <artifactId>poker-game-kata</artifactId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
+  <name>RE'18 tutorial :: PokerGame Kata</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <build>
+    <finalName>poker-game</finalName>
+    <defaultGoal>package</defaultGoal>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
+----
+
+[start=4]
+. In a terminal, run the following command `mvn clean package`, which chould end witha  `BUILD SUCCESS` result.
+
+
+=== Step #1: Creating the backlog
+
+You can use fancy web-based tools to support your backlog (_e.g._, TODO). For this tutorial, we'll use plain
+old paper-based material. You can download the personas and story template (A4/Letter) and the kanban (A3/Tabloid) one here: TODO.
+
+1. Read the Kata description: https://codingdojo.org/kata/PokerHands/
+
+[TIP]
+====
+* Identify the _personas_ associated to the kata description.
+** Who is involved? What do they expect from the system?
+* Identify the _epics_ associated to these perosnas.
+** How to ensure that the epics are the right one?
+* Refine your epics into user stories. Remember stories are made of (Persona, Action, Benefit) triplet + acceptance criteria. Also remember the _I_ of the _INVEST_ acronym (for _indepenendence_)
+* Using Poker planning, identify the technical cost and the business value associated to your stories.
+====
+
+
+
 
 == References and links
 
