@@ -60,27 +60,57 @@ include::pom-example.xml[]
 . In a terminal, run the following command `mvn clean package`, which chould end witha  `BUILD SUCCESS` result.
 
 
-=== Step #1: Creating the backlog
+=== Step #1: Creating the (product) backlog
 
-You can use fancy web-based tools to support your backlog (_e.g._, TODO). For this tutorial, we'll use plain
+You can use fancy web-based tools to support your backlog (_e.g._, see <<backlogtools,this list>>). For this tutorial, we'll use plain
 old paper-based material. You can download the personas and story template (A4/Letter) and the kanban (A3/Tabloid) one here: TODO.
 
 . Read the Kata description: https://codingdojo.org/kata/PokerHands/
+. Start extracting usefull information:
 +
 [TIP]
 ====
 * Identify the _personas_ associated to the kata description.
 ** Who is involved? What do they expect from the system?
-* Identify the _epics_ associated to these perosnas.
+* Identify the _epics_ associated to these personas.
 ** How to ensure that the epics are the right one?
 * Refine your epics into user stories. Remember stories are made of (Persona, Action, Benefit) triplet + acceptance criteria. Also remember the _I_ of the _INVEST_ acronym (for _indepenendence_)
 * Using Poker planning, identify the technical cost and the business value associated to your stories.
 ====
 +
-. Next step
+. Feedback
+[TIP]
+====
+* What is difficult ? Easy ? 
+* What are the roles of the epics ?
+====
 
+=== Step #2: Define a Sprint Backlog
 
+TODO (not sure if it's the following or not)
+
+=== Step #3: Starting a first Sprint
+
+We are not going to start from scratch and we will consider that the initial sprint (often call "Sprint 0") has been done and that the basic code, the coding framework and the testing framework is in place.
+
+. Download it TODO.
+. Start developping the 1st story of your backlog
+* Find a way to automatically validate the acceptance criteria
+* Rince and repeat
+. Feedback
+* What do you think about developpement time ? 
+* What is the role of automated acceptation ? 
+* Over-engineering vs emerging architecture ? 
+* How to validate the backlog ? 
+* Limitations on the acceptance tests in Cucumber? 
+* How to test UI ?
 
 == References and links
 
-- https://codingdojo.org/kata/PokerHands/
+* Kata:
+** https://codingdojo.org/kata/PokerHands/
+
+[[backlogtools]]
+* Backlog tools (examples)
+** https://easybacklog.com/
+** https://trello.com/
