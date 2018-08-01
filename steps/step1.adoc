@@ -1,0 +1,24 @@
+=== Step #1: Creating the (product) backlog
+
+You can use fancy web-based tools to support your backlog (_e.g._, see <<backlogtools,this list>>). For this tutorial, we'll use plain
+old paper-based material. You can download the personas and story template (A4/Letter) and the kanban (A3/Tabloid) one here: TODO.
+
+. Read the Kata description: https://codingdojo.org/kata/PokerHands/
+. Start extracting usefull information:
++
+[TIP]
+====
+* Identify the _personas_ associated to the kata description.
+** Who is involved? What do they expect from the system?
+* Identify the _epics_ associated to these personas.
+** How to ensure that the epics are the right one?
+* Refine your epics into user stories. Remember stories are made of (Persona, Action, Benefit) triplet + acceptance criteria. Also remember the _I_ of the _INVEST_ acronym (for _independence_)
+* Using Poker planning (TODO cards), identify the technical cost and the business value associated to your stories.
+====
++
+.Feedback
+[TIP]
+====
+* What is difficult ? Easy ?
+* What are the roles of the epics ?
+====

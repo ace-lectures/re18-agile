@@ -1,0 +1,56 @@
+= Step #2: Starting a Sprint Backlog
+
+== Building the Sprint Backlog
+
+We will develop our product in Java. If you have followed the _prerequisites_ step, you should have this code on your computer, an the `agile-tutorial` directory.
+
+Our product contains the following stories, making it minimal:
+
+* As _Bob_ (the poker player), I want to give my hand's content to the croupier so that I can participate to the game;
+* As _Alice_ (the croupier), I want to check the absence of card duplicates in an hand so that I can detect cheaters.
+
+[TIP]
+====
+* Identify in your product backlog a couple of stories to develop to transform this _minimal product_ into a _minimal and viable_ one.
+* Is there a way to trace these stories w.r.t. the source code?
+* What about the acceptance criteria?
+====
+
+== Implement a Story
+
+Enrich the product by implementing one of the selected story(ies).
+
+[TIP]
+====
+* What about acceptance criteria?
+* What about traceability?
+====
+
+To trace code back to stories, a classical way is to use the source code version control and leverage commit messages. We'll introduce a version control server at the end of this tutorial, and focus for now on the acceptance part.
+
+== Create an Unit test
+
+First of all, add a dependency to Junit in your `pom.xml`
+
+----
+<dependencies>
+  <dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.12</version>
+    <scope>test</scope>
+  </dependency>
+</dependencies>
+----
+
+Then, in the `src/test/java/` directory, create a package named `re.poker` and add your first unit test inside it. This test assess that an hand containing a duplicated card is detected.
+
+----
+TODO
+----
+
+[TIP]
+====
+* Improve the test suite by implementing other acceptance criteria.
+** What about readability?
+====

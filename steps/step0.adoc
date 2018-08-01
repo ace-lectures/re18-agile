@@ -1,0 +1,18 @@
+
+=== Step #0 (optional): Setting up a java project
+
+We provide a minimal product for you to start with. If you want to start from scratch and do it on your own, please follow these instructions.
+
+. Create a new directory, e.g., `agile-tutorial`
+. inside this directory, create the following structure:
+  * Business code: `src/main/java`, `src/main/resources`
+  * Test code: `src/test/java`, `src/test/resources`
+. Create a maven _Project Object Model_  in a file named `pom.xml` with the following contents
++
+[source,xml]
+----
+include::pom-initial.xml[]
+----
+
+[start=4]
+. In a terminal, run the following command `mvn clean package`, which should end with a  `BUILD SUCCESS` result.
