@@ -1,4 +1,4 @@
-package re.poker.cards;
+package re.poker.cards.deck;
 
 import java.util.Arrays;
 
