@@ -25,6 +25,8 @@ endif::[]
 :re2018tuto: http://www.re18.org/tutorials.html#T02
 :docker: https://docs.docker.com/[Docker]
 :gherkin: http://cukes.info/gherkin.html[Gherkin]
+:maven: https://maven.apache.org/[Maven]
+:java: https://java.com/en/download/[Java]
 
 == Context
 
@@ -38,7 +40,7 @@ This tutorial aims at exploring the boundaries between requirements, specificati
 
 == Requirements
 
-NOTE: Participants are required to have {docker} installed, as well as Maven (version 3+) and a Java 8+ JDK. A virtual box image containing all the needed tools can be downloaded.
+NOTE: Participants are required to have {docker} installed, as well as {maven} (version 3+) and a {java} 8+ JDK. A virtual box image containing all the needed tools can be downloaded.
 
 == Tutorial
 
@@ -51,67 +53,42 @@ We provide a minimal product for you to start with. If you want to start from sc
   * Business code: `src/main/java`, `src/main/resources`
   * Test code: `src/test/java`, `src/test/resources`
 . Create a maven _Project Object Model_  in a file named `pom.xml` with the following contents
-
++
+[source,xml]
 ----
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-			     http://maven.apache.org/maven-v4_0_0.xsd">
-
-  <modelVersion>4.0.0</modelVersion>
-
-  <groupId>org.re.tutorials.agility</groupId>
-  <artifactId>poker-game-kata</artifactId>
-  <version>1.0</version>
-  <packaging>jar</packaging>
-  <name>RE'18 tutorial :: PokerGame Kata</name>
-
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-
-  <build>
-    <finalName>poker-game</finalName>
-    <defaultGoal>package</defaultGoal>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.1</version>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-
-</project>
+include::pom-example.xml[]
 ----
 
 [start=4]
 . In a terminal, run the following command `mvn clean package`, which should end with a  `BUILD SUCCESS` result.
 
 
-=== Step #1: Creating the backlog
+=== Step #1: Creating the (product) backlog
 
-You can use fancy web-based tools to support your backlog (_e.g._, TODO). For this tutorial, we'll use plain
+You can use fancy web-based tools to support your backlog (_e.g._, see <<backlogtools,this list>>). For this tutorial, we'll use plain
 old paper-based material. You can download the personas and story template (A4/Letter) and the kanban (A3/Tabloid) one here: TODO.
 
-1. Read the Kata description: https://codingdojo.org/kata/PokerHands/
-
+. Read the Kata description: https://codingdojo.org/kata/PokerHands/
+. Start extracting usefull information:
++
 [TIP]
 ====
 * Identify the _personas_ associated to the kata description.
 ** Who is involved? What do they expect from the system?
-* Identify the _epics_ associated to these perosnas.
+* Identify the _epics_ associated to these personas.
 ** How to ensure that the epics are the right one?
 * Refine your epics into user stories. Remember stories are made of (Persona, Action, Benefit) triplet + acceptance criteria. Also remember the _I_ of the _INVEST_ acronym (for _indepenendence_)
 * Using Poker planning (TODO cards), identify the technical cost and the business value associated to your stories.
 ====
++
+.Feedback
+[TIP]
+====
+* What is difficult ? Easy ?
+* What are the roles of the epics ?
+====
 
-== Step #2: Develop your MVP
+=== Step #2: Define a Sprint Backlog
 
 We will develop our product in Java. Our product contains the following stories, making it minimal:
 
@@ -125,15 +102,67 @@ $ git clone XXXXXX
 
 ----
 
+TODO (not sure if it's the following or not)
 
+=== Step #3: Starting a first Sprint
+
+We are not going to start from scratch and we will consider that the initial sprint (often call "Sprint 0") has been done and that the basic code, the coding framework and the testing framework is in place.
+
+. Download it here: TODO.
+. Start developping the 1st story of your backlog
+* Find a way to automatically validate the acceptance criteria
+* Rince and repeat
++
+.Feedback
 [TIP]
 ====
-* How to trace the
+* What do you think about developpement time ?
+* What is the role of automated acceptation ?
+* Over-engineering vs emerging architecture ?
+* How to validate the backlog ?
+* Limitations on the acceptance tests in Cucumber?
+* How to test UI ?
 ====
 
+=== Step #4: Continuous Deployment
 
-To support this
+In this step you will deploy your app as a {docker} image that can be used in a shell.
+
+.Feedback
+[TIP]
+====
+What are the benefits of such packaging ?
+Why an image and not code or exe ?
+====
+
+. Set a continuous integration pipeline.
+. Note that we use {Docker} to ease and accelerate the process, but this is not mandatory.
+* Set up a Git server, a Jenkins, an artifactory
+* When you commit, tests are laounched on the CI server, and build the new version on the artifactory repo.
++
+.Feedback
+[TIP]
+====
+What do you thonk of this process ?
+Heavy ? Avantages ? Critical projects size ?
+====
++
+. Continuous deployment: modify the jenkins so that it generates the docker-ready image to go.
++
+WARNING: As jenkins is already in Docker, you are doing docker in docker!
++
+.Feedback
+[TIP]
+====
+TODO (du commit au deployment ?)
+====
 
 == References and links
 
-- https://codingdojo.org/kata/PokerHands/
+* Kata:
+** https://codingdojo.org/kata/PokerHands/
+
+[[backlogtools]]
+* Backlog tools (examples)
+** https://easybacklog.com/
+** https://trello.com/
