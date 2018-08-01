@@ -69,6 +69,7 @@ azrael:agile-tutorial mosser$ git --version
 git version 2.15.2 (Apple Git-101.1)
 ----
 
+WARNING: Faire cloner avant
 
 == Docker container engine
 
@@ -80,3 +81,6 @@ To avoid the installation of tons of different software stacks on your computer,
 azrael:agile-tutorial mosser$ docker -v
 Docker version 18.06.0-ce, build 0ffa825
 ----
+
+
+WARNING: faire initialiser a l'avance en lançant le compose-up pour avoir les images en local

@@ -38,71 +38,23 @@ Sebastien Mosser <https://github.com/mosser[@mosser]> & Jean-Michel Bruel <https
 
 This tutorial aims at exploring the boundaries between requirements, specifications, stories, scenarios and tests. Revisiting requirements elicitation and bridging the gap between traditional requirements engineering and modern software development (highly based on continuous integration and tests), this tutorial will demonstrate how to operationalize a fully-fledged tool chain going from user stories to automated acceptance testing using open-source tools. This is applicable to industrial practitioners as we will rely on state of the art tools, and link agile requirements to formal requirement engineering methods. We will first focus on the notion of user stories and epics to express user’s requirements, and how to evaluate such requirements based on “definition of ready” and “definition of done” acceptance criteria. We will then demonstrate how such requirements can be tracked in a project management tool, and linked to source code development. At the source code level, we will demonstrate how the stories and the associated acceptance scenarios can be modeled using the {gherkin} language, and linked to classical unit tests to automate their validation. Finally, a continuous integration environment will be deployed using Docker to link together the different tools and offer an automated pipeline for software developers, bridging the gap between requirements and code development.
 
-== Requirements
+== Prerequisites
 
-NOTE: Participants are required to have {docker} installed, as well as {maven} (version 3+) and a {java} 8+ JDK. A virtual box image containing all the needed tools can be downloaded.
+Please read the Prerequisites page to install the necessary software on your computer before the tutorial.
 
 == Tutorial
 
-=== Step #0 (optional): Setting up a java project
 
-We provide a minimal product for you to start with. If you want to start from scratch and do it on your own, please follow these instructions.
-
-. Create a new directory, e.g., `agile-tutorial`
-. inside this directory, create the following structure:
-  * Business code: `src/main/java`, `src/main/resources`
-  * Test code: `src/test/java`, `src/test/resources`
-. Create a maven _Project Object Model_  in a file named `pom.xml` with the following contents
-+
-[source,xml]
-----
-include::pom-example.xml[]
-----
-
-[start=4]
-. In a terminal, run the following command `mvn clean package`, which should end with a  `BUILD SUCCESS` result.
+* Step #0 (optional): Setting up a Java project
+* Step #1: Creating the product backlog
+* Step #2: Starting the first sprint
 
 
-=== Step #1: Creating the (product) backlog
 
-You can use fancy web-based tools to support your backlog (_e.g._, see <<backlogtools,this list>>). For this tutorial, we'll use plain
-old paper-based material. You can download the personas and story template (A4/Letter) and the kanban (A3/Tabloid) one here: TODO.
 
-. Read the Kata description: https://codingdojo.org/kata/PokerHands/
-. Start extracting usefull information:
-+
-[TIP]
-====
-* Identify the _personas_ associated to the kata description.
-** Who is involved? What do they expect from the system?
-* Identify the _epics_ associated to these personas.
-** How to ensure that the epics are the right one?
-* Refine your epics into user stories. Remember stories are made of (Persona, Action, Benefit) triplet + acceptance criteria. Also remember the _I_ of the _INVEST_ acronym (for _indepenendence_)
-* Using Poker planning (TODO cards), identify the technical cost and the business value associated to your stories.
-====
-+
-.Feedback
-[TIP]
-====
-* What is difficult ? Easy ?
-* What are the roles of the epics ?
-====
 
-=== Step #2: Define a Sprint Backlog
 
-We will develop our product in Java. Our product contains the following stories, making it minimal:
 
-* As _Bob_ (a poker player), I want to give my hand's content to the croupier so that I can participate in the game;
-* As _Alice_ (the croupier), I want to check the absence of card duplicates in an hand so that I can detect cheaters.
-
-Retrieve the source code by cloning the repository on you computer:
-
-----
-$ git clone XXXXXX
-
-----
-
-TODO (not sure if it's the following or not)
 
 === Step #3: Starting a first Sprint
 
