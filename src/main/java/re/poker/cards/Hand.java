@@ -16,8 +16,11 @@ public class Hand {
         this.cards = cards;
     }
 
-
     public String getPlayerName() { return playerName; }
     public Set<Card> getCards() { return cards; }
+
+    public String toString() {
+        return playerName + " " + cards;
+    }
 
 }

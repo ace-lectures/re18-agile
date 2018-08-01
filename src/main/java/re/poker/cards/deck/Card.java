@@ -42,4 +42,9 @@ public class Card {
 
         return Objects.hash(value, suit);
     }
+
+    @Override
+    public String toString() {
+        return value + " of " +suit;
+    }
 }
