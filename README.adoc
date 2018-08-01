@@ -78,7 +78,7 @@ old paper-based material. You can download the personas and story template (A4/L
 * Using Poker planning, identify the technical cost and the business value associated to your stories.
 ====
 +
-. Feedback
+.Feedback
 [TIP]
 ====
 * What is difficult ? Easy ? 
@@ -93,17 +93,54 @@ TODO (not sure if it's the following or not)
 
 We are not going to start from scratch and we will consider that the initial sprint (often call "Sprint 0") has been done and that the basic code, the coding framework and the testing framework is in place.
 
-. Download it TODO.
+. Download it here: TODO.
 . Start developping the 1st story of your backlog
 * Find a way to automatically validate the acceptance criteria
 * Rince and repeat
-. Feedback
++
+.Feedback
+[TIP]
+====
 * What do you think about developpement time ? 
 * What is the role of automated acceptation ? 
 * Over-engineering vs emerging architecture ? 
 * How to validate the backlog ? 
 * Limitations on the acceptance tests in Cucumber? 
 * How to test UI ?
+====
+
+=== Step #4: Continuous Deployment
+
+In this step you will deploy your app as a {docker} image that can be used in a shell.
+
+.Feedback
+[TIP]
+====
+What are the benefits of such packaging ? 
+Why an image and not code or exe ?
+====
+
+. Set a continuous integration pipeline.
+. Note that we use {Docker} to ease and accelerate the process, but this is not mandatory.
+* Set up a Git server, a Jenkins, an artifactory
+* When you commit, tests are laounched on the CI server, and build the new version on the artifactory repo.
++
+.Feedback
+[TIP]
+====
+What do you thonk of this process ? 
+Heavy ? Avantages ? Critical projects size ?
+====
++
+. Continuous deployment: modify the jenkins so that it generates the docker-ready image to go.
++
+WARNING: As jenkins is already in Docker, you are doing docker in docker!
++
+.Feedback
+[TIP]
+====
+TODO (du commit au deployment ?)
+====
 
 == References and links
 
