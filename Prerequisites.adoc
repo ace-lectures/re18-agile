@@ -1,0 +1,36 @@
+= Prerequisites
+Sebastien Mosser <https://github.com/mosser[@mosser]>; Jean-Michel Bruel <https://github.com/jmbruel[@jmbruel]>
+
+// Stuff for look & feel --------
+ifndef::env-github[:icons: font]
+ifdef::env-github,env-browser[]
+:toc: macro
+:toclevels: 1
+endif::[]
+ifdef::env-github[]
+:branch: master
+:status:
+:outfilesuffix: .adoc
+:!toc-title:
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+// Variables ---------------------
+:re2018url: http://www.re18.org/
+:re2018: {re2018url}[RE'2018]
+:re2018tuto: http://www.re18.org/tutorials.html#T02
+:docker: https://docs.docker.com/[Docker]
+:gherkin: http://cukes.info/gherkin.html[Gherkin]
+
+
+
+== Development Language
+
+We will develop using the Java Language, using JDK 8+ features. 
+
+
+NOTE: Participants are required to have {docker} installed, as well as Maven (version 3+) and a Java 8+ JDK. A virtual box image containing all the needed tools can be downloaded.

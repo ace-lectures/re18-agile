@@ -42,7 +42,9 @@ NOTE: Participants are required to have {docker} installed, as well as Maven (ve
 
 == Tutorial
 
-=== Step #0: Setting up a java project
+=== Step #0 (optional): Setting up a java project
+
+We provide a minimal product for you to start with. If you want to start from scratch and do it on your own, please follow these instructions.
 
 . Create a new directory, e.g., `agile-tutorial`
 . inside this directory, create the following structure:
@@ -89,7 +91,7 @@ NOTE: Participants are required to have {docker} installed, as well as Maven (ve
 ----
 
 [start=4]
-. In a terminal, run the following command `mvn clean package`, which chould end witha  `BUILD SUCCESS` result.
+. In a terminal, run the following command `mvn clean package`, which should end with a  `BUILD SUCCESS` result.
 
 
 === Step #1: Creating the backlog
@@ -106,11 +108,31 @@ old paper-based material. You can download the personas and story template (A4/L
 * Identify the _epics_ associated to these perosnas.
 ** How to ensure that the epics are the right one?
 * Refine your epics into user stories. Remember stories are made of (Persona, Action, Benefit) triplet + acceptance criteria. Also remember the _I_ of the _INVEST_ acronym (for _indepenendence_)
-* Using Poker planning, identify the technical cost and the business value associated to your stories.
+* Using Poker planning (TODO cards), identify the technical cost and the business value associated to your stories.
+====
+
+== Step #2: Develop your MVP
+
+We will develop our product in Java. Our product contains the following stories, making it minimal:
+
+* As _Bob_ (a poker player), I want to give my hand's content to the croupier so that I can participate in the game;
+* As _Alice_ (the croupier), I want to check the absence of card duplicates in an hand so that I can detect cheaters.
+
+Retrieve the source code by cloning the repository on you computer:
+
+----
+$ git clone XXXXXX
+
+----
+
+
+[TIP]
+====
+* How to trace the
 ====
 
 
-
+To support this
 
 == References and links
 
