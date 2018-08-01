@@ -11,7 +11,7 @@ We provide a minimal product for you to start with. If you want to start from sc
 +
 [source,xml]
 ----
-include::pom-example.xml[]
+include::pom-initial.xml[]
 ----
 
 [start=4]
