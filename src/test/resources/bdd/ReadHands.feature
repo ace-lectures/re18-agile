@@ -11,3 +11,8 @@ Feature: Reading a Poker Hand
       And contains the THREE of CLUBS
 
 
+  Scenario: Read an hand with a duplicated card
+    Given a player named Bob
+    When he enters the following cards: QD TS 2C KD QD
+    Then the game detect a cheat attempt
+

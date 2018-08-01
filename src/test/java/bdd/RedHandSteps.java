@@ -17,16 +17,22 @@ public class RedHandSteps {
 
     private String playerName;
     private Hand givenHand;
+    private boolean cheater;
 
     @Given("^a player named (.*)$")
     public void setPlayerName(String playerName) {
         this.playerName = playerName;
+        this.cheater = false;
     }
 
     @When("^(?:he|she) enters the following cards: (.*)$")
     public void enterPlayerHand(String data){
         HandReader reader = new HandReader(string2stream(data));
-        this.givenHand = reader.obtainForPlayer(playerName);
+       try {
+            this.givenHand = reader.obtainForPlayer(playerName);
+       } catch (IllegalArgumentException iae) {
+            this.cheater = true;
+       }
     }
 
     @Then("^(?:his|her) hand contains (\\d+) cards$")
@@ -36,10 +42,15 @@ public class RedHandSteps {
 
     @Then("^contains the (.*) of (.*)$")
     public void checkHandSize(String value, String suit) {
-        CardValue v = CardValue.valueOf(value);
-        Suit s = Suit.valueOf(suit);
+        CardValue v = CardValue.valueOf(value.trim());
+        Suit s = Suit.valueOf(suit.trim());
         Card theCard = new Card(v,s);
         assertTrue(givenHand.getCards().contains(theCard));
+    }
+
+    @Then("^the game detect a cheat attempt$")
+    public void detectCheaters() {
+        assertTrue(this.cheater);
     }
 
 
