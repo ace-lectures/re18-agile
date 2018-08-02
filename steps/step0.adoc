@@ -11,8 +11,7 @@ We provide a minimal product for you to start with. If you want to start from sc
 +
 [source,xml]
 ----
-include::pom-initial.xml[]
+include::../pom-initial.xml[]
 ----
-
-[start=4]
++
 . In a terminal, run the following command `mvn clean package`, which should end with a  `BUILD SUCCESS` result.

@@ -46,7 +46,7 @@ Please read the Prerequisites page to install the necessary software on your com
 == Tutorial
 
 
-* Step #0 (optional): Setting up a Java project
+* Step #0 (optional): {repo}/blob/master/steps/step0.html[Setting up a Java project]
 * Step #1: Creating the product backlog
 * Step #2: Starting the first sprint
 
