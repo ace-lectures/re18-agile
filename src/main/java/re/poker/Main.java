@@ -1,23 +1,22 @@
 package re.poker;
 
 import re.poker.cards.Hand;
-import re.poker.cards.HandReader;
 
 public class Main {
 
 
     public static void main(String[] args) {
-        HandReader reader = new HandReader(System.in);
 
-        System.out.print("Enter Black's hand: ");
-        Hand black = reader.obtainForPlayer("Black");
-        System.out.println(black);
+        Game theGame = new Game();
 
-        System.out.print("Enter White's hand: ");
-        Hand white = reader.obtainForPlayer("White");
-        System.out.println(white);
+        System.out.print("Enter 1st player hand: ");
+        theGame.submit("1st", new Hand(System.in));
 
-        // ...
+        System.out.print("Enter 2nd player hand: ");
+        theGame.submit("2nd", new Hand(System.in));
+
+        System.out.println("And the winner is: " + theGame.declareWinner());
+
     }
 
 }

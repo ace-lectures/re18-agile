@@ -1,4 +1,4 @@
-package re.poker.cards.deck;
+package re.poker.cards;
 
 import java.util.Arrays;
 
@@ -19,11 +19,9 @@ public enum Suit {
     }
 
     public static Suit read(char c) {
-        return Arrays.stream(Suit.values())
-                .filter((Suit s) -> s.symbol == c)
+        return Arrays.stream(Suit.values()).filter((Suit s) -> s.symbol == c)
                 .findFirst()
-                .orElseThrow(() ->
-                        new IllegalArgumentException("Unknown suit symbol: " + c));
+                .orElseThrow(() -> new IllegalArgumentException("Unknown suit symbol: " + c));
     }
 
 }

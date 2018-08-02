@@ -1,4 +1,6 @@
-package re.poker.cards.deck;
+package re.poker.cards;
+
+import java.util.Arrays;
 
 public enum CardValue {
 
@@ -7,8 +9,6 @@ public enum CardValue {
     EIGHT('8', 8),  NINE( '9', 9), TEN(  'T', 10),
     JACK( 'J', 11), QUEEN('Q', 12), KING( 'K', 13),
     ACE(  'A', 14);
-
-
 
     private final char symbol;
     public char getSymbol() { return symbol; }
@@ -21,13 +21,10 @@ public enum CardValue {
         this.value = value;
     }
 
-
     public static CardValue read(char c) {
-        for(CardValue cv: CardValue.values()) {
-            if(cv.symbol == c)
-                return cv;
-        }
-        throw new IllegalArgumentException("Unknown card value: "+c);
+        return Arrays.stream(CardValue.values()).filter((CardValue v) -> v.symbol == c)
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Unknown value symbol: " + c));
     }
 
 }

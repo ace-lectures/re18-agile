@@ -1,15 +1,7 @@
 package bdd;
 
 import cucumber.api.java.en.*;
-import re.poker.cards.Hand;
-import re.poker.cards.HandReader;
-import re.poker.cards.deck.Card;
-import re.poker.cards.deck.CardValue;
-import re.poker.cards.deck.Suit;
-
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
+import re.poker.cards.*;
 
 import static org.junit.Assert.*;
 
@@ -27,9 +19,8 @@ public class ReadHandSteps {
 
     @When("^(?:he|she) enters the following cards: (.*)$")
     public void enterPlayerHand(String data){
-        HandReader reader = new HandReader(string2stream(data));
        try {
-            this.givenHand = reader.obtainForPlayer(playerName);
+            this.givenHand = new Hand(data);
        } catch (IllegalArgumentException iae) {
             this.cheater = true;
        }
@@ -44,7 +35,7 @@ public class ReadHandSteps {
     public void checkHandSize(String value, String suit) {
         CardValue v = CardValue.valueOf(value.trim());
         Suit s = Suit.valueOf(suit.trim());
-        Card theCard = new Card(v,s);
+        Card theCard = new Card(v.getSymbol()+""+s.getSymbol());
         assertTrue(givenHand.getCards().contains(theCard));
     }
 
@@ -53,15 +44,6 @@ public class ReadHandSteps {
         assertTrue(this.cheater);
     }
 
-
-
-    private InputStream string2stream(String data) {
-        try {
-            return new ByteArrayInputStream(data.getBytes("UTF-8"));
-        } catch (UnsupportedEncodingException use) {
-            throw new RuntimeException(use);
-        }
-    }
 
 }
 
