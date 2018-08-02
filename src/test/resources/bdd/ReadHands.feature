@@ -14,5 +14,5 @@ Feature: Reading a Poker Hand
   Scenario: Read an hand with a duplicated card
     Given a player named Bob
     When he enters the following cards: QD TS 2C KD QD
-    Then the game detect a cheat attempt
+    Then the game detects a cheat attempt
 
