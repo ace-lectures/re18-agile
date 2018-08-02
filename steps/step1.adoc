@@ -13,7 +13,7 @@ old paper-based material. You can download the personas and story template (A4/L
 * Identify the _epics_ associated to these personas.
 ** How to ensure that the epics are the right one?
 * Refine your epics into user stories. Remember stories are made of (Persona, Action, Benefit) triplet + acceptance criteria. Also remember the _I_ of the _INVEST_ acronym (for _independence_)
-* Using Poker planning (TODO cards), identify the technical cost and the business value associated to your stories.
+* Using Poker planning (using the provided cards), identify the technical cost and the business value associated to your stories.
 ====
 +
 .Feedback
