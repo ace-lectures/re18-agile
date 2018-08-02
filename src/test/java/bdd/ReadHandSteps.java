@@ -13,7 +13,7 @@ import java.io.UnsupportedEncodingException;
 
 import static org.junit.Assert.*;
 
-public class RedHandSteps {
+public class ReadHandSteps {
 
     private String playerName;
     private Hand givenHand;
