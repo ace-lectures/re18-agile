@@ -16,6 +16,11 @@ public class Card implements Comparable<Card> {
     public CardValue getValue() { return value; }
     public Suit getSuit() { return suit; }
 
+    public Card(CardValue v, Suit s) {
+        this.value = v;
+        this.suit = s;
+    }
+
     public Card(String description) {
         if(description.length() != 2)
             throw new IllegalArgumentException("Card descriptor must be exactly two characters");

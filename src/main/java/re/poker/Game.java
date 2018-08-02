@@ -16,6 +16,14 @@ public class Game {
         this.hands.put(playerName, hand);
     }
 
+    public Hand getByPlayer(String playerName) { return hands.get(playerName); }
+
+
+    public String declareWinner() {
+        throw new UnsupportedOperationException("Cannot determine winner!");
+    }
+
+
     private boolean isLegit(Hand newHand) {
         Set<Card> played =
                 hands.values().stream().map(Hand::getCards).flatMap(Set::stream).collect(Collectors.toSet());
@@ -24,8 +32,5 @@ public class Game {
         return intersection.isEmpty();
     }
 
-    public String declareWinner() {
-        throw new UnsupportedOperationException("Cannot determine winner!");
-    }
 
 }

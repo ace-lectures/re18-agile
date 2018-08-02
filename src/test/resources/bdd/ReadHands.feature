@@ -1,18 +1,22 @@
 Feature: Reading a Poker Hand
 
   Scenario: Read a regular hand
-    Given a player named Bob
-    When he enters the following cards: QD TS 2C KD 3C
-    Then his hand contains 5 cards
-      And contains the QUEEN of DIAMONDS
-      And contains the TEN   of SPADES
-      And contains the TWO   of CLUBS
-      And contains the KING  of DIAMONDS
-      And contains the THREE of CLUBS
+    Given a new game
+    When Bob submits the following cards: QD TS 2C KD 3C
+    Then Bob's hand contains 5 cards
+      And Bob's hand contains the QUEEN of DIAMONDS
+      And Bob's hand contains the TEN   of SPADES
+      And Bob's hand contains the TWO   of CLUBS
+      And Bob's hand contains the KING  of DIAMONDS
+      And Bob's hand contains the THREE of CLUBS
 
+  Scenario: Reject an hand with a duplicated card
+    Given a new game
+    When Bob submits the following cards: QD TS 2C KD QD
+    Then a cheat attempt is detected!
 
-  Scenario: Read an hand with a duplicated card
-    Given a player named Bob
-    When he enters the following cards: QD TS 2C KD QD
-    Then the game detects a cheat attempt
-
+  Scenario: Detect cheaters when submitting duplicated cards
+    Given a new game
+    When Bob submits the following cards: AC KC QC JC TC
+      And Alice submits the following cards: QD QH QS QC KD
+    Then a cheat attempt is detected!
