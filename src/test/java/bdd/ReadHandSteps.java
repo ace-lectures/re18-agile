@@ -48,7 +48,7 @@ public class ReadHandSteps {
         assertTrue(givenHand.getCards().contains(theCard));
     }
 
-    @Then("^the game detect a cheat attempt$")
+    @Then("^the game detects a cheat attempt$")
     public void detectCheaters() {
         assertTrue(this.cheater);
     }
