@@ -2,6 +2,7 @@
 Sebastien Mosser <https://github.com/mosser[@mosser]>; Jean-Michel Bruel <https://github.com/jmbruel[@jmbruel]>
 
 // Stuff for look & feel --------
+:imagesdir: images
 ifndef::env-github[:icons: font]
 ifdef::env-github,env-browser[]
 :toc: macro
@@ -114,6 +115,9 @@ TODO (du commit au deployment ?)
 
 * Kata:
 ** https://codingdojo.org/kata/PokerHands/
+** Poker combinations and ranking: https://www.espacejeux.com/en/poker/combinations
++
+image::hands.jpg[]
 
 [[backlogtools]]
 * Backlog tools (examples)
