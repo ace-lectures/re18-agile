@@ -15,3 +15,8 @@ pipeline:
     port: 22
     target: /usr/share/nginx/html
     source: releases/poker-game-r${DRONE_BUILD_NUMBER}.jar
+
+  docker:
+    image: plugins/docker
+    repo: localhost:5000/poker-game
+    registry: localhost:5000
