@@ -3,7 +3,7 @@ pipeline:
   build:
     image: maven:3.5-alpine
     commands:
-      - mvn clean package
+      - mvn -q clean package
 
 #  publish:
 #    image: plugins/docker

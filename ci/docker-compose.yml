@@ -5,40 +5,45 @@ version: '2'
 
 services:
 
-  # Version control system (lightweight)
-  gittea:
+  # Gitea: Version control system (lightweight)
+  gitea:
     image: gitea/gitea:1.3.2
     restart: always
+    container_name: gitea
     volumes:
-      - ./gittea/:/data
+      - ./gitea/:/data
     ports:
       - "3000:3000"
 
-  # Continuous integration server (lightweight)
+  # Drone.io: Continuous integration server (lightweight)
   drone-server:
     image: drone/drone:0.8
+    container_name: drone-server
     depends_on:
-      - gittea
+      - gitea
     ports:
       - "8000:8000"
-      - "9000:9000"
     volumes:
       - ./drone:/var/lib/drone/
     restart: always
     environment:
+      - DRONE_DEBUG=true
+      - GIN_MODE=release
       # Drone Config
       - DRONE_OPEN=true
       - DRONE_HOST=http://drone-server:8000
       - DRONE_SECRET=agile-tutorial-re18
-      - DRONE_ADMIN=re18
+      - DRONE_NETWORK=re18-network
+      - DRONE_REMOTE_URL=http://drone-server:8000
       # Gittea config to hook the CI to the VCS
       - DRONE_GITEA=true
-      - DRONE_GITEA_URL=http://gittea:3000
+      - DRONE_GITEA_URL=http://gitea:3000
 
 
   # Build agent associated to the CI server
   drone-agent:
     image: drone/agent:0.8
+    container_name: drone-agent
     restart: always
     depends_on:
       - drone-server
@@ -46,6 +51,26 @@ services:
       # Necessary to support 'docker in docker'
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
+      - DRONE_DEBUG=true
       - DRONE_SERVER=drone-server:9000
       - DRONE_SECRET=agile-tutorial-re18
       - DRONE_MAX_PROCS=3
+
+
+
+  # Optional service: Portainer supervision dashboard
+  portainer:
+      image: portainer/portainer
+      container_name: portainer
+      ports:
+         - "9000:9000"
+      command: -H unix:///var/run/docker.sock
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - ./portainer:/data
+
+networks:
+  default:
+    external:
+      # required to create an external local network (execute `docker network create re18-network`)
+      name: re18-network
