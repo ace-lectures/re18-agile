@@ -56,7 +56,13 @@ services:
       - DRONE_SECRET=agile-tutorial-re18
       - DRONE_MAX_PROCS=3
 
-
+  # Lightweight release management: SSH server to push releases, and HTTP server to download it
+  release-manager:
+    image: release-manager:latest
+    build: ./release_manager
+    container_name: release-manager
+    ports:
+      - "8080:8080"
 
   # Optional service: Portainer supervision dashboard
   portainer:

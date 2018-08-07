@@ -4,7 +4,14 @@ pipeline:
     image: maven:3.5-alpine
     commands:
       - mvn -q clean package
+      - mkdir releases
+      - cp target/poker-game.jar releases/poker-game-r${DRONE_BUILD_NUMBER}.jar
 
-#  publish:
-#    image: plugins/docker
-#    repo: petitroll/poker-game
+  scp:
+    image: appleboy/drone-scp
+    host: release-manager
+    username: root
+    password: re18
+    port: 22
+    target: /usr/share/nginx/html
+    source: releases/poker-game-r${DRONE_BUILD_NUMBER}.jar
