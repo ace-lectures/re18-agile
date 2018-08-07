@@ -18,5 +18,6 @@ pipeline:
 
   docker:
     image: plugins/docker
-    repo: localhost:5000/poker-game
-    registry: localhost:5000
+    repo: registry:5000/poker-game
+    registry: registry:5000
+    insecure: true
