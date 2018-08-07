@@ -61,8 +61,22 @@ services:
     image: release-manager:latest
     build: ./release_manager
     container_name: release-manager
+    depends_on:
+      - drone-server
     ports:
       - "8080:8080"
+
+  # Docker registry
+  registry:
+    image: registry:2
+    container_name: registry
+    restart: always
+    depends_on:
+      - drone-server
+    ports:
+      - "5000:5000"
+    volumes:
+      - "./registry:/var/lib/registry"
 
   # Optional service: Portainer supervision dashboard
   portainer:

@@ -5,7 +5,7 @@ FROM openjdk:8-jre-alpine
 LABEL maintainer="Sébastien Mosser (mosser@i3s.unice.fr)"
 
 # Copying the built JAR inside the image
-COPY ./poker-game.jar ./poker-game.jar
+COPY ./target/poker-game.jar ./poker-game.jar
 
 # How to start the shipped artefact
 ENTRYPOINT ["java", "-cp", "./poker-game.jar"]
