@@ -17,9 +17,9 @@ of the kata initial description.
     - _E.g._, `2H 3D 5S 9C KD` represents the following hand: 2:hearts: 3:diamonds: 5:spades: 9:clubs: King:diamonds:
   - Hands are entered using the command line (`stdin`).
 
-**The objective of this kata is to identify the best combination of cards available in a given hand, and for a game 
-composed of multiple players to identify the winner.** Combinations are ranked according to the following order:
-
+**The objective of this kata is to identify the best combination of cards available in a given hand (among others), and 
+for a game composed of multiple players to identify the winner.** Combinations are ranked according to the following 
+order:
 
 <div align="center">
 
@@ -28,7 +28,7 @@ composed of multiple players to identify the winner.** Combinations are ranked a
 </div>
 
 
-## :bangbang: Exercise
+### :bangbang: Exercise
 
   1. Identify the personae involved in this kata.
   2. For each persona, define:
