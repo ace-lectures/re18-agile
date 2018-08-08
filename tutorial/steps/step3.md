@@ -71,6 +71,7 @@ The previous command should end by printing `BUILD SUCCESS` to the standard outp
 
   - Stories #1 and #2 are considered _DONE_ by the team. Can you validate this statement by using the product? 
 
+## Developing the product
 
 ### :rotating_light: Implementation status
 
@@ -85,6 +86,14 @@ The previous command should end by printing `BUILD SUCCESS` to the standard outp
       - 2:spades:`.equals(`2:hearts:`) != true`, but
       - 2:spades:`.compareTo(`2:hearts:`) == 0`
   - The `Game` class collects hands from players, assess their legitimacy and identify the winning one;
+  - The `Helpers` class contains static hands ready to be used for tests purpose.
 
+### :bangbang: Exercise
+
+  - Fix the `Main` class to print the highest card of each collected hand, so that story #3 can be considered as _DONE_;
+    - :unlock: Hint: As (i) the `Card` class implements comparable and (ii) `Hand` is basically defined a set of cards, 
+      one can rely on the `Collections::max` static method. Let `h` an `Hand`, `Collections.max(h.getCards())` returns 
+      its highest card.
+  - Implement the code associated to the business logic of story #4
 
   * Next step: [Executing acceptance scenarios](./step4.md)
