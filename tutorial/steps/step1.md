@@ -28,7 +28,7 @@ composed of multiple players to identify the winner.** Combinations are ranked a
 </div>
 
 
-## :fast_forward: Exercise
+## :bangbang: Exercise
 
   1. Identify the personae involved in this kata.
   2. For each persona, define:
