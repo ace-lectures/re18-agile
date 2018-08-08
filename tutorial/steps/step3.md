@@ -81,8 +81,9 @@ The previous command should end by printing `BUILD SUCCESS` to the standard outp
     `Suit`. Both values and suits are represented as enumerated types to simplify the input parsing;
   - The `Card` class implements the `Comparable` interface: `card1.compareTo(card2)` returns a negative number if 
     `card1` < `card2`, `0` if they have the same value, and a positive number otherwise. Be careful that in this case 
-    having the same value does not means being equals : `2:spades: ≠ 2:hearts:`, but  
-    `2:spades: .compareTo(2:hearts:) == 0`
+    having the same value does not means being equals : 
+      - 2:spades:`.equals(`2:hearts:`) != true`, but
+      - 2:spades:`.compareTo(`2:hearts:`) == 0`
   - The `Game` class collects hands from players, assess their legitimacy and identify the winning one;
 
 
