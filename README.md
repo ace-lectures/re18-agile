@@ -45,7 +45,7 @@ This repository contains the following material:
   
 ## Where to start?
 
-  - Organizers: read the [organizer Guide](Organizers.md) to prepare your session;
+  - Organizers: read the [organizer Guide](organizers/README.md) to prepare your session;
   - Participants: Go to the [first step](./tutorial/steps/step1.md)! 
   
 ## How to contribute to this tutorial?
