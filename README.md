@@ -36,7 +36,8 @@ available on the [coding dojo](https://codingdojo.org/kata/PokerHands/) website.
 
 This repository contains the following material:
 
-  - `tutorial`: A step-by-step description of this tutorial;
+  - `tutorial`: A step-by-step description of this tutorial, for participants;
+  - `organizers`: material for organizers.
   - `src`: the source code use to kick-start the implementation and test part of the tutorial
   - `ci`: a turnkey lightweight CI (Continuous Integration) stack
   - `publications`: papers associated to this tutorial
@@ -45,7 +46,7 @@ This repository contains the following material:
   
 ## Where to start?
 
-  - Organizers: read the [organizer Guide](organizers/README.md) to prepare your session;
+  - Organizers: read the [organizer Guide](./organizers/README.md) to prepare your session;
   - Participants: Go to the [first step](./tutorial/steps/step1.md)! 
   
 ## How to contribute to this tutorial?

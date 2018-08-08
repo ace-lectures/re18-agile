@@ -28,17 +28,23 @@
  
  ### First part (before break)
  
+ <div align="center">
+ 
  | Abs. Time | Length | Activity | Who? |
  | --- | --- | --- | --- |
  | `T0` | 5' | Tutorial opening | Organizers |
  | `T0+5` |  
  
+ </div>
  
  
 ### Second part (after break)
+
+ <div align="center">
 
  | Abs. Time | Length | Activity | Who? |
  | --- | --- | --- | --- |
  | `T1` | 5' | Tutorial opening | Organizers |
  | `T1+5` |  
  
+  </div>
