@@ -1,5 +1,6 @@
 pipeline:
 
+  # Building the Poker Game using Maven
   build:
     image: maven:3.5-alpine
     commands:
@@ -7,7 +8,9 @@ pipeline:
       - mkdir releases
       - cp target/poker-game.jar releases/poker-game-r${DRONE_BUILD_NUMBER}.jar
 
+  # Publishing the last release in the release manager
   scp:
+    group: releasing
     image: appleboy/drone-scp
     host: release-manager
     username: root
@@ -16,8 +19,10 @@ pipeline:
     target: /usr/share/nginx/html
     source: releases/poker-game-r${DRONE_BUILD_NUMBER}.jar
 
+  # Building and publishing the Docker image to the local registry
   docker:
+    group: releasing
     image: plugins/docker
     repo: registry:5000/poker-game
     registry: registry:5000
-    insecure: true
+    insecure: true # Don't do this at home (demonstration purpose only, deactivating certificates validation)

@@ -34,13 +34,11 @@ services:
       - DRONE_HOST=http://drone-server:8000
       - DRONE_SECRET=agile-tutorial-re18
       - DRONE_NETWORK=re18-network
-      - DRONE_REMOTE_URL=http://drone-server:8000
       # Gittea config to hook the CI to the VCS
       - DRONE_GITEA=true
       - DRONE_GITEA_URL=http://gitea:3000
 
-
-  # Build agent associated to the CI server
+  # Build agent associated to the Drone server
   drone-agent:
     image: drone/agent:0.8
     container_name: drone-agent
@@ -77,17 +75,6 @@ services:
       - "5000:5000"
     volumes:
       - "./registry:/var/lib/registry"
-
-  # Optional service: Portainer supervision dashboard
-  portainer:
-      image: portainer/portainer
-      container_name: portainer
-      ports:
-         - "9000:9000"
-      command: -H unix:///var/run/docker.sock
-      volumes:
-        - /var/run/docker.sock:/var/run/docker.sock
-        - ./portainer:/data
 
 networks:
   default:
