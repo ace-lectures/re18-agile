@@ -81,7 +81,7 @@ For time reasons we will not go into a full planning poker session, but instead 
 
 ### :bangbang: Exercise
 
-  - Select the stories you think the more valuable for the first development sprint;
+  - Select the stories you think the more valuable for the first development sprint, creating your _iteration backlog_;
   - For each story, use poker-planning cards to see if both member of the group agree on the technical risk (story 
     points) and business value estimation
 

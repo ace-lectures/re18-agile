@@ -10,10 +10,14 @@ public class Main {
         Game theGame = new Game();
 
         System.out.print("Enter 1st player hand: ");
-        theGame.submit("1st", new Hand(System.in));
+        Hand first = new Hand(System.in);
+        System.out.println("1st: " + first);
+        theGame.submit("1st", first);
 
         System.out.print("Enter 2nd player hand: ");
-        theGame.submit("2nd", new Hand(System.in));
+        Hand second = new Hand(System.in);
+        System.out.println("2nd: " + second);
+        theGame.submit("2nd", second);
 
         System.out.println("And the winner is: " + theGame.declareWinner());
 
