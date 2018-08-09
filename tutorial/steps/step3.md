@@ -136,10 +136,20 @@ public class Main {
   <summary>Click to expand code solution (<tt>Game.java</tt>)</summary>
 
 ```
-
+public String declareWinner() {
+    if (hands.isEmpty())
+        return "No winner if no players!";
+    Card max = hands.values().stream().map(Hand::getCards).flatMap(Set::stream).max(Card::compareTo).get();
+    return hands.entrySet().stream()
+            .filter(e -> e.getValue().getCards().contains(max))
+            .findFirst().get().getKey();
+}
 ```
 
 </details>
+
+## Testing the product
+
 
 
 
