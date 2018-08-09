@@ -25,7 +25,7 @@ public class Game {
             return "No winner if no players!";
         Card max = hands.values().stream().map(Hand::getCards).flatMap(Set::stream).max(Card::compareTo).get();
         return hands.entrySet().stream()
-                .filter(stringHandEntry -> stringHandEntry.getValue().getCards().contains(max))
+                .filter(e -> e.getValue().getCards().contains(max))
                 .findFirst().get().getKey();
     }
 
