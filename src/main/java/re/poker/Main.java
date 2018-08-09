@@ -2,6 +2,8 @@ package re.poker;
 
 import re.poker.cards.Hand;
 
+import java.util.Collections;
+
 public class Main {
 
 
@@ -12,6 +14,7 @@ public class Main {
         System.out.print("Enter 1st player hand: ");
         Hand first = new Hand(System.in);
         System.out.println("1st: " + first);
+        System.out.println("  Highest card: " + Collections.max(first.getCards()));
         theGame.submit("1st", first);
 
         System.out.print("Enter 2nd player hand: ");

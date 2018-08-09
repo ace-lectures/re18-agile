@@ -6,6 +6,7 @@ import re.poker.cards.Card;
 import java.util.*;
 import java.util.stream.Collectors;
 
+
 public class Game {
 
     private Map<String, Hand> hands = new HashMap<>();
@@ -20,9 +21,13 @@ public class Game {
 
 
     public String declareWinner() {
-        throw new UnsupportedOperationException("Cannot determine winner!");
+        if (hands.isEmpty())
+            return "No winner if no players!";
+        Card max = hands.values().stream().map(Hand::getCards).flatMap(Set::stream).max(Card::compareTo).get();
+        return hands.entrySet().stream()
+                .filter(stringHandEntry -> stringHandEntry.getValue().getCards().contains(max))
+                .findFirst().get().getKey();
     }
-
 
     private boolean isLegit(Hand newHand) {
         Set<Card> played =
