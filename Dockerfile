@@ -7,8 +7,5 @@ LABEL maintainer="Sébastien Mosser (mosser@i3s.unice.fr)"
 # Copying the built JAR inside the image
 COPY ./target/poker-game.jar ./poker-game.jar
 
-# How to start the shipped artefact
-ENTRYPOINT ["java", "-cp", "./poker-game.jar"]
-
-# Default parameter (here run the Main class)
-CMD ["re.poker.Main"]
+# Starts the poker-game executab;e
+CMD ["java", "-jar", "./poker-game.jar"]

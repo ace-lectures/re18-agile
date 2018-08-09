@@ -13,8 +13,8 @@ pipeline:
     group: releasing
     image: appleboy/drone-scp
     host: release-manager
-    username: root
-    password: re18
+    username: root # Don't do this at home (demonstration purpose only)
+    password: re18 # Don't do this at home (use secret instead)
     port: 22
     target: /usr/share/nginx/html
     source: releases/poker-game-r${DRONE_BUILD_NUMBER}.jar

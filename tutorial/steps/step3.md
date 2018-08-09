@@ -31,15 +31,19 @@ We consider here the following iteration backlog.
       - Business value: 3
       - Acceptance scenario: One enters two hands. The winning hand according to the HC combination is printend on 
         screen
+  5. As Alice, I want to identify ex æquo hands in a given round so that I can declare the _tie_ situation.
+      - Story points: 13
+      - Business value: 40
+      - Acceptance scenario: One enters two ex æquo hands. The system declares a _tie_.
+
+The Kanban board of the team looks like the following today:
 
 
-This iteration aims to deliver 56,5 units of business value, associated to a load of 32. These are relative units, not
- absolute ones. The Kanban board of the team looks like the following today:
+| TO DO | IN PROGRESS | DONE  |
+| :---: | :---:       | :---: |
+| #4    |  #3         |  #1   |
+| #5    |             |  #2   |  
 
-| TO DO | IN PROGRESS | DONE |
-| ---   | ---         | ---  |
-| #4    |  #3         |  #1  |
-|       |             |  #2  | 
 
 ## Running the existing product
 
@@ -91,9 +95,52 @@ The previous command should end by printing `BUILD SUCCESS` to the standard outp
 ### :bangbang: Exercise
 
   - Fix the `Main` class to print the highest card of each collected hand, so that story #3 can be considered as _DONE_;
-    - :unlock: Hint: As (i) the `Card` class implements comparable and (ii) `Hand` is basically defined a set of cards, 
+    - :unlock: Hint: As (i) the `Card` class implements `Comparable` and (ii) `Hand` is basically defined a set of cards, 
       one can rely on the `Collections::max` static method. Let `h` an `Hand`, `Collections.max(h.getCards())` returns 
       its highest card.
   - Implement the code associated to the business logic of story #4
+
+
+<details>
+  <summary>Click to expand code solution (<tt>Main.java</tt>)</summary>
+
+```java
+package re.poker;
+import re.poker.cards.Hand;
+import java.util.Collections;
+
+public class Main {
+    public static void main(String[] args) {
+        Game theGame = new Game();
+
+        System.out.print("Enter 1st player hand: ");
+        Hand first = new Hand(System.in);
+        System.out.println("1st: " + first);
+        System.out.println("  Highest card: " + Collections.max(first.getCards()));
+        theGame.submit("1st", first);
+
+        System.out.print("Enter 2nd player hand: ");
+        Hand second = new Hand(System.in);
+        System.out.println("2nd: " + second);
+        theGame.submit("2nd", second);
+
+        System.out.println("And the winner is: " + theGame.declareWinner());
+    }
+}
+```
+
+</details>
+
+
+<details>
+  <summary>Click to expand code solution (<tt>Game.java</tt>)</summary>
+
+```
+
+```
+
+</details>
+
+
 
   * Next step: [Executing acceptance scenarios](./step4.md)
