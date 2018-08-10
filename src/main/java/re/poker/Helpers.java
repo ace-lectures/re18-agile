@@ -29,6 +29,6 @@ public class Helpers {
     public static final Hand THREE_OF_A_KIND = new Hand("5D JC 8C 8H 8D");
     public static final Hand TWO_PAIRS       = new Hand("QD QH KC KH 3S");
     public static final Hand PAIR            = new Hand("TS JD 7S 6H 6C");
-    public static final Hand HIGH_CARD       = new Hand("7S 6H 4S 3D 2C");
+    public static final Hand HIGH_CARD       = new Hand("7S 6D 4S 3D 2C");
 
 }
