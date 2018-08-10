@@ -147,11 +147,11 @@ public Map.Entry<String, Hand> winnerByHC() {
     - `azrael:agile-tutorial mosser$ mvn clean package`
   - If you have imported the code in your favorite IDE, it should support unit tests as JUnit is the _de facto_ standard for such tests in Java. For example in IntelliJ, right click on the `re.poker` test package and select `Run Tests`.
 
-<center>
+<div align="center">
 
 ![Unit test support in IntelliJ](../pics/unit_tests_IntelliJ.png)
 
-</center>
+</div>
    
 
 ### :bangbang: Exercise
