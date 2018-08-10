@@ -162,6 +162,7 @@ public Map.Entry<String, Hand> winnerByHC() {
     - How to handle the ex-æquo case (_e.g._, returning `null` when detecting a tie situation)? Can you write a unit test that exhibits the behaviour of the system when encountering such a situation?
   - Look at the unit tests that are already implemented in the test suite.
     - Can we consider it as a specification?  How to maintain a traceability link between stories and tests?
+  - :cyclone: (_optional_) already finished? What about developing story #5 and support ex-æquo rounds? 
 
 <details>
 	<summary>Click to expand code solution (<tt>GameTest.java</tt>)</summary>
