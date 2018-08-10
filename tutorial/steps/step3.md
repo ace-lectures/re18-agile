@@ -98,35 +98,20 @@ The previous command should end by printing `BUILD SUCCESS` to the standard outp
     - :unlock: Hint: As (i) the `Card` class implements `Comparable` and (ii) `Hand` is basically defined a set of cards, 
       one can rely on the `Collections::max` static method. Let `h` an `Hand`, `Collections.max(h.getCards())` returns 
       its highest card.
-  - Implement the code associated to the business logic of story #4
-
+  - Update the `Game` class to support the business logic of story #4.
+    -  :unlock: Hint: The winner here is the owner of the highest card of all hands.
 
 <details>
   <summary>Click to expand code solution (<tt>Main.java</tt>)</summary>
 
 ```java
-package re.poker;
-import re.poker.cards.Hand;
-import java.util.Collections;
-
-public class Main {
-    public static void main(String[] args) {
-        Game theGame = new Game();
-
-        System.out.print("Enter 1st player hand: ");
-        Hand first = new Hand(System.in);
-        System.out.println("1st: " + first);
-        System.out.println("  Highest card: " + Collections.max(first.getCards()));
-        theGame.submit("1st", first);
-
-        System.out.print("Enter 2nd player hand: ");
-        Hand second = new Hand(System.in);
-        System.out.println("2nd: " + second);
-        theGame.submit("2nd", second);
-
-        System.out.println("And the winner is: " + theGame.declareWinner());
-    }
-}
+// ...
+System.out.print("Enter 1st player hand: ");
+Hand first = new Hand(System.in);
+System.out.println("1st: " + first);
+System.out.println("  Highest card: " + Collections.max(first.getCards()));
+theGame.submit("1st", first);
+// ...
 ```
 
 </details>
@@ -135,14 +120,19 @@ public class Main {
 <details>
   <summary>Click to expand code solution (<tt>Game.java</tt>)</summary>
 
-```
+```java
 public String declareWinner() {
     if (hands.isEmpty())
         return "No winner if no players!";
-    Card max = hands.values().stream().map(Hand::getCards).flatMap(Set::stream).max(Card::compareTo).get();
+    return winnerByHC().getKey();
+}
+
+public Map.Entry<String, Hand> winnerByHC() {
+    Card max = hands.values().stream()
+                .map(Hand::getCards).flatMap(Set::stream).max(Card::compareTo).get();
     return hands.entrySet().stream()
             .filter(e -> e.getValue().getCards().contains(max))
-            .findFirst().get().getKey();
+            .findFirst().get();
 }
 ```
 
@@ -150,6 +140,57 @@ public String declareWinner() {
 
 ## Testing the product
 
+### :rotating_light: Implementation status
+
+  - The development team has created a test suite for the product, under `src/test/java`, in the `re.poker` package.
+  - To execute the test suite, run the following command:
+    - `azrael:agile-tutorial mosser$ mvn clean package`
+  - If you have imported the code in your favorite IDE, it should support unit tests as JUnit is the _de facto_ standard for such tests in Java. For example in IntelliJ, right click on the `re.poker` test package and select `Run Tests`.
+
+<center>
+
+![Unit test support in IntelliJ](../pics/unit_tests_IntelliJ.png)
+
+</center>
+   
+
+### :bangbang: Exercise
+
+  - Look at the `GameTest` class. The `declareTheWinner` test case is ignored (`@Ignore`). Remove this annotation and re-execute the test suite. 
+    - Can we consider story #4 done now? Do you find this test misleading?
+  - Create a Test (_e.g._, `compareTwoHandsAccordingToHC`) that explicitly check the HC winning when there is a winner, and run it.
+    - How to handle the ex-æquo case (_e.g._, returning `null` when detecting a tie situation)? Can you write a unit test that exhibits the behaviour of the system when encountering such a situation?
+  - Look at the unit tests that are already implemented in the test suite.
+    - Can we consider it as a specification?  How to maintain a traceability link between stories and tests?
+
+<details>
+	<summary>Click to expand code solution (<tt>GameTest.java</tt>)</summary>
+
+```java
+@Test
+public void compareTwoHandsAccordingToHC() {
+    Game theGame = new Game();
+    Hand highest = new Hand("AD KD QD JD TD");
+    Hand lowest =  new Hand("8C 7C 6C 5C 4C");
+    theGame.submit("Bob",  lowest);
+    theGame.submit("Alice", highest);
+    Map.Entry<String, Hand> obtained = theGame.winnerByHC();
+    assertEquals("Alice", obtained.getKey());
+    assertEquals(highest, obtained.getValue());
+}
+
+@Test
+@Ignore
+public void compareHCWhenExAequo() {
+    Game theGame = new Game();
+    theGame.submit("Bob",   new Hand("AC KC QC JC TC"));
+    theGame.submit("Alice", new Hand("AD KD QD JD TD"));
+    Map.Entry<String, Hand> obtained = theGame.winnerByHC();
+    assertNull(obtained);
+}
+```    
+
+</details>
 
 
 
