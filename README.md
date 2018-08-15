@@ -1,4 +1,4 @@
-# Reconciling Requirements and Continuous Integration in an Agile Context
+# Reconciling Requirements and Continuous Integration in an Agile Context  
 
   * Version: 1.0
   * Authors: 
