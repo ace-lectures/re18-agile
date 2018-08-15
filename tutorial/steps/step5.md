@@ -11,7 +11,7 @@ Our objective is the following: _When a developer commits some code, the CI stac
 
 <div align="center">
 
-![](../pics/ci_stack.png)
+![](../pics/ci_stack.jpg)
 
 </div>
 
