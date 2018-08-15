@@ -194,7 +194,7 @@ public void compareHCWhenExAequo() {
 </details>
 
 
-### :cyclone: (_optional_) already finished? 
+### :cyclone: (_optional_) Already finished? 
 
 What about developing story #5 and support ex-æquo rounds? 
 

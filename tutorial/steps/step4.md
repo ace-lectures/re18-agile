@@ -2,8 +2,6 @@
 
   * Previous step: [Implementing Stories & Tests](./step3.md)
 
-## Using Unit Tests 
-
 ## Linking Tests to Stories
 
 The idea here is to work at a better abstraction level and maintain a link between the developed features and the associated automated tests. In addition to JUnit as test engine, we rely on the [Gherkin](https://docs.cucumber.io/gherkin/reference/) language to express acceptance scenarios, and on the [Cucumber](https://cucumber.io/) framework to automate their execution
@@ -26,14 +24,15 @@ The acceptance scenarios are already executed when running an `mvn clean package
 
 ![Support in IntelliJ for result presentation](../pics/cucumber_intellij.png)
 
-
 </div> 
+
+:zap: Remark: _The IntelliJ plugin requires cucumber to be in version `2.x`. You'll have to downgrade the given source code (which uses the latest one, `3.x`) to make it work on this source code._
 
 ### :bangbang: Exercise
 
-  - Extends the `ScenarioSteps` contents to understand the following assertion steps: `Then Bob's highest card is the ACE of CLUBS`
+  - Extends the `ScenarioSteps` contents to understand the following assertion steps: 
+    - `Then Bob's highest card is the ACE of CLUBS`
   - Extend the `ReadHands.feature` descriptor to add an acceptance scenario validating story #3.
-  - Do the same to support story #4 automated validation
 
 <details>
 	<summary>Click to expand code solution (<tt>AcceptanceSteps.java</tt>)</summary>
@@ -52,7 +51,7 @@ public void checkHighestCard(String thePlayer, String value, String suit) {
 </details>	  
 
 <details>
-	<summary>Click to expand code solution (<tt>AcceptanceSteps.java</tt>)</summary>
+	<summary>Click to expand code solution (<tt>ReadHands.feature</tt>)</summary>
 	
 ```cucumber
 @Then("^(.*)'s highest card is the (.*) of (.*)$")
@@ -64,7 +63,13 @@ public void checkHighestCard(String thePlayer, String value, String suit) {
     assertEquals(theCard, max);
 }
 ```	
-	
+
 </details>	 
+
+
+### :cyclone: (_optional_) Already finished? 
+
+What about extending the steps and the feature description to assess stories #4? And what about story #5?
+
 
   * Next step: [Building a CI stack](./step5.md)
