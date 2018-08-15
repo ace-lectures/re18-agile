@@ -119,8 +119,7 @@ We now setup the CI server to react when a developer pushes new code to the Gite
   - Look at your Drone dashboard, the build is automatically started!
     - The CI process will obviously first `clone` the source code, then `build` it, and finally `scp` the result to the release manager.
     - Look at the contents  of the `.drone.yml` file. Can you match the contents of this file with the previously described steps?
-
-
+  - go to the release manager contents: [http://localhost:8080/releases/](http://localhost:8080/releases/). You should be able to download the latest release produced by the tool.
 
 
   * Next step: [From CI to CD](./step6.md)
