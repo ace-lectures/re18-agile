@@ -46,7 +46,7 @@ services:
     depends_on:
       - drone-server
     volumes:
-      # Necessary to support 'docker in docker'
+      # Necessary to support 'docker in docker' (on windows10: //var/run/docker.sock:/var/run/docker.sock, double /)
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
       - DRONE_DEBUG=true
@@ -65,16 +65,16 @@ services:
       - "8080:8080"
 
   # Docker registry
-  registry:
-    image: registry:2
-    container_name: registry
-    restart: always
-    depends_on:
-      - drone-server
-    ports:
-      - "5000:5000"
-    volumes:
-      - "./registry:/var/lib/registry"
+  #registry:
+  #  image: registry:2
+  #  container_name: registry
+  #  restart: always
+  #  depends_on:
+  #    - drone-server
+  #  ports:
+  #    - "5000:5000"
+  #  volumes:
+  #    - "./registry:/var/lib/registry"
 
 networks:
   default:

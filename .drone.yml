@@ -20,9 +20,9 @@ pipeline:
     source: releases/poker-game-r${DRONE_BUILD_NUMBER}.jar
 
   # Building and publishing the Docker image to the local registry
-  docker:
-    group: releasing
-    image: plugins/docker
-    repo: registry:5000/poker-game
-    registry: registry:5000
-    insecure: true # Don't do this at home (demonstration purpose only, deactivating certificates validation)
+#  docker:
+#    group: releasing
+#    image: plugins/docker
+#    repo: registry:5000/poker-game
+#    registry: registry:5000
+#    insecure: true # Don't do this at home (demonstration purpose only, deactivating certificates validation)
