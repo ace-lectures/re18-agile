@@ -63,7 +63,7 @@ This repository contains the following material:
  teaching Agile Methods and Model-Based Systems Engineering for more than 10 years. One of its research interest is to 
  define the semantics of traceability links.
  
- **Sébastien Mosser** is Associate Professor at Universite ́ Coˆte d’Azur (France). He is coordinating the Software 
+ **Sébastien Mosser** is Associate Professor at Université Côte d’Azur (France). He is coordinating the Software 
  Architecture specialization of the Computer Science MSc, and teaches soft- ware engineering courses at both graduate 
  and undergraduate levels. His research interests cover software development and separation of concerns mechanisms.
 
@@ -71,10 +71,10 @@ This repository contains the following material:
 
   1. R. Kasauli, G. Liebel, E. Knauss, S. Gopakumar, and B. Kanagwa, “_Requirements engineering challenges in 
      large-scale agile system development_”, RE 2017: 352–361.
-   2. S. Saito, Y. Iimura, A. K. Massey, and A. I. Anton, “_How much undocumented knowledge is there in agile software 
+  2. S. Saito, Y. Iimura, A. K. Massey, and A. I. Anton, “_How much undocumented knowledge is there in agile software 
      development?: Case study on industrial project using issue tracking system and version control system_” 
      RE 2017: 194–203.
-   3. Garm Lucassen, Fabiano Dalpiaz, Jan Martijn E. M. van der Werf, Sjaak Brinkkemper: "_The Use and Effectiveness of 
+  3. Garm Lucassen, Fabiano Dalpiaz, Jan Martijn E. M. van der Werf, Sjaak Brinkkemper: "_The Use and Effectiveness of 
       User Stories in Practice_". REFSQ 2016: 205-222 
-   4. Garm Lucassen, Fabiano Dalpiaz, Jan Martijn E. M. van der Werf, Sjaak Brinkkemper: "_Improving agile 
+  4. Garm Lucassen, Fabiano Dalpiaz, Jan Martijn E. M. van der Werf, Sjaak Brinkkemper: "_Improving agile 
       requirements: the Quality User Story framework and tool_". Requir. Eng. 21(3): 383-403 (2016)

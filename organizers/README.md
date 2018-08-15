@@ -30,10 +30,14 @@
  
  <div align="center">
  
- | Abs. Time | Length | Activity | Who? |
- | --- | --- | --- | --- |
- | `T0` | 5' | Tutorial opening | Organizers |
- | `T0+5` |  
+ | Abs. Time | Length | Activity |
+ | --- | --- | --- |
+ | `T0` | 20' | Tutorial opening |
+ | `T0+20` | 10' | Poker game  kata description & Personæ |
+ | `T0+30` | 20' | Writing Epics and Stories |
+ | `T0+50` | 35' | Implementing stories & Tests |
+ | `T0+85` | 5' | Wrap-up before Break |
+ | `T0+90` | -- | Break |
  
  </div>
  
@@ -42,9 +46,11 @@
 
  <div align="center">
 
- | Abs. Time | Length | Activity | Who? |
- | --- | --- | --- | --- |
- | `T1` | 5' | Tutorial opening | Organizers |
- | `T1+5` |  
+ | Abs. Time | Length | Activity |
+ | --- | --- | --- |
+ | `T1` | 35' | Acceptance Scenarios |
+ | `T1+35` | 25' | Deploying a Continuous Integration (CI) Stack |
+ | `T1+60` | 15' | From CI to Continuous Deployment (CD) |
+ | `T0+75` | 15' | Wrap-up & RoTI |
  
   </div>
