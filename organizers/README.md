@@ -26,31 +26,25 @@
    - `T0` is the starting time, thus `T0+45` means 45 minutes after the start of the tutorial.
    - `T1` is the return time of the break, should be equal to `T0+105` for a 15' break, and `T0+120` for a 30' one.
  
- ### First part (before break)
- 
- <div align="center">
- 
- | Abs. Time | Length | Activity |
- | --- | --- | --- |
- | `T0` | 20' | Tutorial opening |
- | `T0+20` | 10' | Poker game  kata description & Personæ |
- | `T0+30` | 20' | Writing Epics and Stories |
- | `T0+50` | 35' | Implementing stories & Tests |
- | `T0+85` | 5' | Wrap-up before Break |
- | `T0+90` | -- | Break |
- 
- </div>
- 
+### First part (before break)
+
+
+| Abs. Time | Length | Activity |
+| --- | --- | --- |
+| `T0` | 20' | Tutorial opening |
+| `T0+20` | 10' | Poker game  kata description & Personæ |
+| `T0+30` | 20' | Writing Epics and Stories |
+| `T0+50` | 35' | Implementing stories & Tests |
+| `T0+85` | 5' | Wrap-up before Break |
+| `T0+90` | -- | Break |
+
  
 ### Second part (after break)
 
- <div align="center">
-
- | Abs. Time | Length | Activity |
- | --- | --- | --- |
- | `T1` | 35' | Acceptance Scenarios |
- | `T1+35` | 25' | Deploying a Continuous Integration (CI) Stack |
- | `T1+60` | 15' | From CI to Continuous Deployment (CD) |
- | `T0+75` | 15' | Wrap-up & RoTI |
- 
-  </div>
+| Abs. Time | Length | Activity |
+| --- | --- | --- |
+| `T1` | 35' | Acceptance Scenarios |
+| `T1+35` | 25' | Deploying a Continuous Integration (CI) Stack |
+| `T1+60` | 15' | From CI to Continuous Deployment (CD) |
+| `T1+75` | 15' | Wrap-up & RoTI |
+| `T1+90` | -- | That's all folks! | 
