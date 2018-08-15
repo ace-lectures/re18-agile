@@ -20,3 +20,8 @@ Feature: Reading a Poker Hand
     When Bob submits the following cards: AC KC QC JC TC
       And Alice submits the following cards: QD QH QS QC KD
     Then a cheat attempt is detected!
+
+  Scenario: Identify the highest card in an hand
+    Given a new game
+    When Bob submits the following cards: AC KC QC JC TC
+    Then Bob's highest card is the ACE of CLUBS

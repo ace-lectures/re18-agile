@@ -4,6 +4,8 @@ import cucumber.api.java.en.*;
 import re.poker.Game;
 import re.poker.cards.*;
 
+import java.util.Collections;
+
 import static org.junit.Assert.*;
 
 public class ScenarioSteps {
@@ -30,7 +32,7 @@ public class ScenarioSteps {
     }
 
     @Then("^(.*)'s hand contains the (.*) of (.*)$")
-    public void checkHandSize(String thePlayer, String value, String suit) {
+    public void checkHandContents(String thePlayer, String value, String suit) {
         CardValue v = CardValue.valueOf(value.trim());
         Suit s = Suit.valueOf(suit.trim());
         Card theCard = new Card(v.getSymbol()+""+s.getSymbol());
@@ -40,6 +42,16 @@ public class ScenarioSteps {
     @Then("^a cheat attempt is detected!$")
     public void detectCheaters() {
         assertTrue(this.cheatingDetected);
+    }
+
+
+    @Then("^(.*)'s highest card is the (.*) of (.*)$")
+    public void checkHighestCard(String thePlayer, String value, String suit) {
+        CardValue v = CardValue.valueOf(value.trim());
+        Suit s = Suit.valueOf(suit.trim());
+        Card theCard = new Card(v.getSymbol()+""+s.getSymbol());
+        Card max = Collections.max(theGame.getByPlayer(thePlayer).getCards());
+        assertEquals(theCard, max);
     }
 
 }
