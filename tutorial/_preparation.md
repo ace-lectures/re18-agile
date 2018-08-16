@@ -17,7 +17,7 @@ azrael:~ mosser$ git --version
 git version 2.15.2 (Apple Git-101.1)
 ```
 
-You have to cline this repository on your computer:
+You have to clone this repository on your computer:
 
 ```
 azrael:~ mosser$ git clone https://github.com/mosser/agile-tutorial.git
