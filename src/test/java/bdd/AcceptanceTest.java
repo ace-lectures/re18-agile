@@ -4,6 +4,7 @@ import org.junit.Test;
 import re.poker.Game;
 import re.poker.cards.*;
 
+import java.util.Collections;
 import java.util.Set;
 
 import static org.junit.Assert.*;
@@ -25,6 +26,17 @@ public class AcceptanceTest {
         assertTrue(cards.contains(new Card(THREE, CLUBS)));
     }
 
+
+    @Test
+    public void thisIsATest() {
+        Game theGame = new Game();
+        theGame.submit("Bob", new Hand("AC KC QC JC TC"));
+        CardValue v = CardValue.valueOf("ACE");
+        Suit s = Suit.valueOf("CLUBS");
+        Card theCard = new Card(v.getSymbol()+""+s.getSymbol());
+        Card max = Collections.max(theGame.getByPlayer("Bob").getCards());
+        assertEquals(theCard, max);
+    }
 
     @Test(expected = IllegalArgumentException.class)
     public void rejectDuplicatedCardsInASingleHand() {
