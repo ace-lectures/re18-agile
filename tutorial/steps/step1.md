@@ -3,7 +3,7 @@
 ## The Poker Hand Kata: Problem description
 
 This tutorial relies on a simplified version of the [PokerHand](https://codingdojo.org/kata/PokerHands/) kata, which 
-itself simplifies the [TexasHoldEm](https://codingdojo.org/kata/TexasHoldEm/) one. the following text is an adaptation 
+itself simplifies the [TexasHoldEm](https://codingdojo.org/kata/TexasHoldEm/) one. The following text is an adaptation 
 of the kata initial description.
 
   - A poker deck contains 52 cards. 

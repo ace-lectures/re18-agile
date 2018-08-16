@@ -59,6 +59,8 @@ first `clean` your environment and then `package` it. We will skip tests for now
 
     azrael:agile-tutorial mosser$ mvn -DskipTests clean package
 
+:zap: This command can take a while the first time, don't worry!
+
 The previous command should end by printing `BUILD SUCCESS` to the standard output. It produced a file named 
 `poker-game.jar` that contains an executable version of the poker game. To run the game, simply asks java to do so:
 

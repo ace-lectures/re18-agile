@@ -19,10 +19,10 @@ At this step, we will deploy and use the following tools to support this objecti
 
   - A _Version Control System_ (VCS) for source code. We will rely on git for this purpose, and we deploy a Git server named `gitea`.
     - One can classicaly rely on tools such as github, bitbucket, gitlab, ...
-  - A _Continuous Integration_ (CI) server. We will use `drone`, a very light CI tool (written in go). A CI tool is often composed of a main _server_, and a set of _agents_ that will handle the tasks to be done (compiling, running the tests, ...)/
+  - A _Continuous Integration_ (CI) server. We will use `drone`, a very light CI tool (written in go). A CI tool is often composed of a main _server_, and a set of _agents_ that will handle the tasks to be done (compiling, running the tests, ...).
     - Classical CI server are Bamboo, Hudson, Jenkins, ...
-  - A _Artifact Repository Manager_ to release our product. Here, we will use a custom tool made on purpose, where we will push new releases using `scp` and expose the releases thanks to an `http` server. 
-    -   classical artifacts managers are NPM, Artifactory, Nexus, ...
+  - An _Artifact Repository Manager_ to release our product. Here, we will use a custom tool made on purpose, where we will push new releases using `scp` and expose the releases thanks to an `http` server. 
+    - Classical artifacts managers are NPM, Artifactory, Nexus, ...
 
 In the next step, we will go from CI to _Continuous Deployment_ and also releases the poker game product as an executable image.
 
@@ -114,12 +114,12 @@ We now setup the CI server to react when a developer pushes new code to the Gite
   
   - Add the newly created Gitea repository as a new _remote_ repository for your code.
     - `git remote add gitea http://localhost:3000/re18/agile-tutorial.git` 
-  - the `git remote` command now returns two remote endpoints: `origin` (this very repository, hosted by github) and `gitea`, your local one.
-  - push your code to gitea 
-  - Look at your Drone dashboard, the build is automatically started!
+  - The `git remote` command now returns two remote endpoints: `origin` (this very repository, hosted by github) and `gitea`, your local one.
+  - Push your code to gitea (`git push gitea`, using your `re18` account to log in)
+  - Look at your Drone dashboard, the build is automatically started (you might have to refresh your browser)!
     - The CI process will obviously first `clone` the source code, then `build` it, and finally `scp` the result to the release manager.
     - Look at the contents  of the `.drone.yml` file. Can you match the contents of this file with the previously described steps?
-  - go to the release manager contents: [http://localhost:8080/releases/](http://localhost:8080/releases/). You should be able to download the latest release produced by the tool.
+  - Go to the release manager contents: [http://localhost:8080/releases/](http://localhost:8080/releases/). You should be able to download the latest release produced by the tool.
 
 
   * Next step: [From CI to CD](./step6.md)
