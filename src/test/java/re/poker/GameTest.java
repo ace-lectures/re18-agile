@@ -27,26 +27,4 @@ public class GameTest {
         theGame.submit("Alice", Helpers.STRAIGHT_FLUSH);
         assertEquals("Alice", theGame.declareWinner());
     }
-    @Test
-    @Ignore
-    public void compareTwoHandsAccordingToHC() {
-        Game theGame = new Game();
-        Hand highest = new Hand("AD KD QD JD TD");
-        Hand lowest =  new Hand("8C 7C 6C 5C 4C");
-        theGame.submit("Bob",  lowest);
-        theGame.submit("Alice", highest);
-        Map.Entry<String, Hand> obtained = theGame.winnerByHC();
-        assertEquals("Alice", obtained.getKey());
-        assertEquals(highest, obtained.getValue());
-    }
-
-    @Test
-    @Ignore
-    public void compareHCWhenExAequo() {
-        Game theGame = new Game();
-        theGame.submit("Bob",   new Hand("AC KC QC JC TC"));
-        theGame.submit("Alice", new Hand("AD KD QD JD TD"));
-        Map.Entry<String, Hand> obtained = theGame.winnerByHC();
-        assertNull(obtained);
-    }
 }
