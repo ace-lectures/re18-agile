@@ -21,7 +21,6 @@ You have to cline this repository on your computer:
 
 ```
 azrael:~ mosser$ git clone https://github.com/mosser/agile-tutorial.git
-azrael:~ mosser$ git clone https://github.com/mosser/agile-tutorial.git
 azrael:agile-tutorial mosser$ 
 ```
 
