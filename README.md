@@ -8,6 +8,8 @@
     * Sparks internal seminar: 02/08/18, 08:30AM, _Salle du conseil_;
     * [Requirement Engineering'18](http://www.re18.org/program/conferenceProgramMonday.html#T02): 
       20/08/18, 2PM, Room KC 301
+  * Reviewers: 
+    * Philippe Collet, Laure Gonnord
     
     
 ## Objectives
