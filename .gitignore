@@ -40,6 +40,11 @@ hs_err_pid*
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
 
+# ??
+.idea/.name
+.idea/encodings.xml
+.idea/misc.xml
+
 # Gradle:
 .idea/**/gradle.xml
 .idea/**/libraries
@@ -86,6 +91,11 @@ buildNumber.properties
 
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
 !/.mvn/wrapper/maven-wrapper.jar
+
+# Eclipse
+.project
+.settings
+.classpath
 
 README.html
 
