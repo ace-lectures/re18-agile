@@ -54,14 +54,10 @@ public void checkHighestCard(String thePlayer, String value, String suit) {
 	<summary>Click to expand code solution (<tt>ReadHands.feature</tt>)</summary>
 	
 ```cucumber
-@Then("^(.*)'s highest card is the (.*) of (.*)$")
-public void checkHighestCard(String thePlayer, String value, String suit) {
-    CardValue v = CardValue.valueOf(value.trim());
-    Suit s = Suit.valueOf(suit.trim());
-    Card theCard = new Card(v.getSymbol()+""+s.getSymbol());
-    Card max = Collections.max(theGame.getByPlayer(thePlayer).getCards());
-    assertEquals(theCard, max);
-}
+Scenario: Identify the highest card in an hand
+  Given a new game
+  When Bob submits the following cards: AC KC QC JC TC
+  Then Bob's highest card is the ACE of CLUBS
 ```	
 
 </details>	 
