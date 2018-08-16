@@ -1,6 +1,6 @@
 # Step 6: From CI to CD
 
-  * Previous step: [Building a CI stack](./step6.md)
+  * Previous step: [Building a CI stack](./step5.md)
 
 
 We will here extend the CI stack defined in the previous step to support _Continuous Deployment_ (CD).
