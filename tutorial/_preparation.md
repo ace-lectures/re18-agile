@@ -4,6 +4,8 @@ This tutorial includes an hands-on session where you'll have to program a very s
 this in the continuous integration stack demonstrated in the tutorial, you will have to use the following tools on 
 your computer.
 
+In case of need, do not hesitate to contact us by email ([mosser@i3s.unice.fr](mosser@i3s.unice.fr)), or by filling up an issue on this website.
+
 ## Version control system
 
 We will use the Git source code version control system.
