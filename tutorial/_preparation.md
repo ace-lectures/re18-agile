@@ -21,6 +21,7 @@ You have to clone this repository on your computer:
 
 ```
 azrael:~ mosser$ git clone https://github.com/mosser/agile-tutorial.git
+azrael:~ mosser$ cd agile-tutorial
 azrael:agile-tutorial mosser$ 
 ```
 
