@@ -32,10 +32,4 @@ public class Game {
         return intersection.isEmpty();
     }
 
-	public Map.Entry<String, Hand> winnerByHC() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
 }
