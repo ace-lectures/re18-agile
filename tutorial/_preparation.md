@@ -11,16 +11,21 @@ up an issue on this website.
 
 This tutorial requires Git, Java (8+), Maven (3+) and Docker. See next section if you need more details for these tools. 
 To prepare your computer for this session, please execute the following command on your computer, it will save time and 
-bandwidth during the session. It basically: (1) retrieve the material from Github, (2) download all the dependencies 
-needed by Java and (3) download all the docker images necessary for the continuous integration steps.
+bandwidth during the session. It basically: 
+
+  1. retrieves the material from Github;
+  2. downloads all the dependencies 
+needed by Java;
+  3. downloads all the docker images necessary for the continuous integration steps.
 
 ```
 azrael:~ mosser$ git clone  https://github.com/mosser/agile-tutorial.git
 azrael:~ mosser$ cd agile-tutorial
 azrael:~/agile-tutorial mosser$ mvn clean package
 azrael:~/agile-tutorial mosser$ cd ci
-azrael:~/agile-tutorial/ci mosser$  docker-compose up -d
-azrael:~/agile-tutorial/ci mosser$  docker-compose down
+azrael:~/agile-tutorial/ci mosser$ docker network create re18-network
+azrael:~/agile-tutorial/ci mosser$ docker-compose up -d
+azrael:~/agile-tutorial/ci mosser$ docker-compose down
 ```
 
 ## Setting up your computer (if needed)
