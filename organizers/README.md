@@ -38,10 +38,10 @@ A couple of days before the tutorial, asks the participants to go to the followi
 
 | Abs. Time | Length | Activity |
 | --- | --- | --- |
-| `T0` | 20' | Tutorial opening |
-| `T0+20` | 10' | Poker game  kata description & Personæ |
-| `T0+30` | 20' | Writing Epics and Stories |
-| `T0+50` | 35' | Implementing stories & Tests |
+| `T0` | 15' | Tutorial opening |
+| `T0+15` | 10' | Poker game  kata description & Personæ |
+| `T0+25` | 30' | Writing Epics and Stories |
+| `T0+55` | 30' | Implementing stories & Tests |
 | `T0+85` | 5' | Wrap-up before Break |
 | `T0+90` | -- | Break |
 
