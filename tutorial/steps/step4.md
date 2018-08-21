@@ -35,7 +35,7 @@ The acceptance scenarios are already executed when running an `mvn clean package
   - Extend the `ReadHands.feature` descriptor to add an acceptance scenario validating story #3.
 
 <details>
-	<summary>Click to expand code solution (<tt>AcceptanceSteps.java</tt>)</summary>
+	<summary>Click to expand code solution (<tt>ScenarioSteps.java</tt>)</summary>
 	
 ```java
 @Then("^(.*)'s highest card is the (.*) of (.*)$")
