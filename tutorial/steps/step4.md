@@ -16,7 +16,7 @@ The idea here is to work at a better abstraction level and maintain a link betwe
     - :warning: One can be more clever with respect to pattern description. This is just an overview.
   - The class `RunCucumberTest` (in `src/test/java/bdd`) is used to link the Cucumber engine to classical JUnit tests.
 
-The acceptance scenarios are already executed when running an `mvn clean package`. If your IDE is compatible with Cucumber (check if a plugin exists), you can even obtain syntax highlight, code completion and result interpretation.
+The acceptance scenarios are already executed when running an `mvn clean package`. If your IDE is compatible with Cucumber (check if a plugin exists, e.g., [this one for eclipse](http://cucumber.github.com/cucumber-eclipse/update-site)), you can even obtain syntax highlight, code completion and result interpretation.
 
 <div align="center">
 
